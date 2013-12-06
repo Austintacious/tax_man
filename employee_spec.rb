@@ -24,7 +24,7 @@ describe Employee do
     expect{Employee.new({"annual_income"=>45000,"tax_paid"=> 9000,"tax_rate"=>30})}.to raise_error(RuntimeError, "invalid input")
   end
 
-  it "raises an error if the hash doesn't include annual_income" do
-    expect{Employee.new({"last_name"=>"Mills","tax_paid"=> 9000,"tax_rate"=>30})}.to raise_error(RuntimeError, "invalid input")
+  it "instaties employee if the hash doesn't include annual_income" do
+    expect(Employee.new({"last_name"=>"Mills","tax_paid"=> 9000,"tax_rate"=>30}).annual_income).to eql(0)
   end
 end
